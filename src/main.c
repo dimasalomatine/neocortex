@@ -1,13 +1,11 @@
 
 
 #include "balg.h"
+#include "asd.h"
 
 /******************************************************************************
                A P P L I C A T I O N - S P E C I F I C   C O D E
  ******************************************************************************/
-
-
-
 
 CHAR                  Pattern[NUM_DATA][Y][X]  = { { "O O O O O ",
                                                      " O O O O O",
@@ -135,17 +133,23 @@ void main()
   NET Net;
   INT n;
 
+  SAMPLE s;
+  f=NULL;
+  InitializeApplication_d(&s,NUM_DATA,X,Y,(CHAR***)Pattern,(CHAR***)Pattern_,f);
+  f=s.f;
+
   InitializeRandoms();
+  InitalizeApplication(&Net);
   GenerateNetwork(&Net,N);
-  f=InitializeApplication(&Net, NUM_DATA, X, Y,Input,Input_,Pattern,Pattern_,f);
+  f=InitializeApplication(&Net, NUM_DATA, X, Y,Input,Input_,Pattern,Pattern_,NULL);
   CalculateWeights(&Net,Input,NUM_DATA);
    
   for (n=0; n<NUM_DATA; n++) {
     SimulateNet(&Net, Input[n],N,X,Y,f);
   }
-  for (n=0; n<NUM_DATA; n++) {
-    SimulateNet(&Net, Input_[n],N,X,Y,f);
-  }
+ // for (n=0; n<NUM_DATA; n++) {
+  //  SimulateNet(&Net, Input_[n],N,X,Y,f);
+ // }
    
-  FinalizeApplication(&Net,f);
+  f=FinalizeApplication(&Net,f);
 }

@@ -5,6 +5,7 @@
                    displayName="Header Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>src/asd.h</itemPath>
       <itemPath>src/balg.h</itemPath>
       <itemPath>src/base.h</itemPath>
     </logicalFolder>
@@ -12,11 +13,14 @@
                    displayName="Resource Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>HOPFIELD.txt</itemPath>
+      <itemPath>README.md</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true"
                    kind="SOURCE_LOGICAL_FOLDER">
+      <itemPath>src/asd.c</itemPath>
       <itemPath>src/balg.c</itemPath>
       <itemPath>src/main.c</itemPath>
     </logicalFolder>

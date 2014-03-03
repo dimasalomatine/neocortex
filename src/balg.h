@@ -24,6 +24,10 @@
 
 #include "base.h"
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
+
 #define NUM_DATA      5
 #define X             10
 #define Y             10
@@ -47,7 +51,8 @@ FILE* InitializeApplication(NET* Net,int nd,int x,int y,INT Input[][N],INT Input
 
 void WriteNet(NET* Net,int x,int y,FILE*f);
 
-void FinalizeApplication(NET* Net,FILE*f);
+void InitalizeApplication(NET* Net);
+FILE* FinalizeApplication(NET* Net,FILE*f);
 
 
 /******************************************************************************
@@ -77,5 +82,9 @@ void PropagateNet(NET* Net);
 
 
 void SimulateNet(NET* Net, INT* Input,int n,int x,int y,FILE*f);
+
+#ifdef	__cplusplus
+}
+#endif
 
 #endif

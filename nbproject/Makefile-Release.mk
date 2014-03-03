@@ -34,6 +34,7 @@ OBJECTDIR=build/${CND_CONF}/${CND_PLATFORM}
 # Object Files
 OBJECTFILES= \
 	${OBJECTDIR}/src/main.o \
+	${OBJECTDIR}/src/asd.o \
 	${OBJECTDIR}/src/balg.o
 
 
@@ -65,6 +66,11 @@ ${OBJECTDIR}/src/main.o: src/main.c
 	${MKDIR} -p ${OBJECTDIR}/src
 	${RM} $@.d
 	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/main.o src/main.c
+
+${OBJECTDIR}/src/asd.o: src/asd.c 
+	${MKDIR} -p ${OBJECTDIR}/src
+	${RM} $@.d
+	$(COMPILE.c) -O2 -MMD -MP -MF $@.d -o ${OBJECTDIR}/src/asd.o src/asd.c
 
 ${OBJECTDIR}/src/balg.o: src/balg.c 
 	${MKDIR} -p ${OBJECTDIR}/src

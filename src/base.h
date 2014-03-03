@@ -29,9 +29,14 @@
 #ifndef __BASE_H
 #define __BASE_H
 
+
+
 #include <stdlib.h>
 #include <stdio.h>
 
+#ifdef	__cplusplus
+extern "C" {
+#endif
 
 typedef int           BOOL;
 typedef char          CHAR;
@@ -56,5 +61,9 @@ typedef struct {                     /* A NET:                                */
         INT*          Threshold;     /* - threshold of ith unit               */
         INT**         Weight;        /* - connection weights to ith unit      */
 } NET;
+
+#ifdef	__cplusplus
+}
+#endif
 
 #endif
